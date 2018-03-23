@@ -4,7 +4,7 @@ Simple Shopping Cart with React and Redux for demonstration
 **Installation**
 
     git clone https://github.com/nidhishgp/shopping-cart-react
-    mv shopping-cart-react
+    cd shopping-cart-react
     npm install     `
 **Usage**
 
