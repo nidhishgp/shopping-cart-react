@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone X",
+        "price": "85000",
+        "image": "apple-iphone-x.jpeg"
+    },
+    {
+        "id": 26,
+        "name": "Apple Macbook Air",
+        "price": "64000",
+        "image": "apple-macbook-pro.jpeg"
+    },
+    {
+        "id": 27,
+        "name": "Apple Macbook Pro",
+        "price": "110000",
+        "image": "apple-macbook-pro.jpeg"
+    },
+    {
+        "id": 24,
+        "name": "Samsung Galaxy On 7",
+        "price": "24000",
+        "image": "samsung-galaxy-on.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "iPhone X Plus",
+        "price": "95000",
+        "image": "apple-iphone-x.jpeg"
+    },
+    {
+        "id": 14,
+        "name": "Motorola G Plus",
+        "price": "25000",
+        "image": "motorola-moto-x4.jpeg"
+    },
+    {
+        "id": 15,
+        "name": "Honor 9",
+        "price": "25000",
+        "image": "honor-9-lite.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "iPhone XS",
+        "price": "90000",
+        "image": "apple-iphone-x.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "iPhone XS Plus",
+        "price": "98000",
+        "image": "apple-iphone-x.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "iPhone 8",
+        "price": "90000",
+        "image": "apple-iphone-8.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "iPhone 8",
+        "price": "40000",
+        "image": "apple-iphone-8.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "iPhone 8S Plus",
+        "price": "58000",
+        "image": "apple-iphone-8.jpeg"
+    },
+    {
+        "id": 10,
+        "name": "Motorola X",
+        "price": "25000",
+        "image": "motorola-moto-x4.jpeg"
+    },
+    {
+        "id": 25,
+        "name": "Apple Macbook",
+        "price": "104000",
+        "image": "apple-macbook-pro.jpeg"
+    },
+    {
+        "id": 28,
+        "name": "Dell Vostro",
+        "price": "55000",
+        "image": "dell-inspiron.jpeg"
+    },
+    {
+        "id": 11,
+        "name": "Motorola X Plus",
+        "price": "30000",
+        "image": "motorola-moto-x4.jpeg"
+    },
+    {
+        "id": 12,
+        "name": "Motorola G",
+        "price": "15000",
+        "image": "motorola-moto-x4.jpeg"
+    },
+    {
+        "id": 16,
+        "name": "Honor 9 Lite",
+        "price": "15000",
+        "image": "honor-9-lite.jpeg"
+    },
+    {
+        "id": 17,
+        "name": "Honor 8",
+        "price": "19000",
+        "image": "honor-9-lite.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "iPhone 8S",
+        "price": "45000",
+        "image": "apple-iphone-8.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "iPhone 8 Plus",
+        "price": "44000",
+        "image": "apple-iphone-8.jpeg"
+    },
+    {
+        "id": 18,
+        "name": "Honor 7",
+        "price": "17000",
+        "image": "honor-9-lite.jpeg"
+    },
+    {
+        "id": 19,
+        "name": "Honor 7X",
+        "price": "22000",
+        "image": "honor-9-lite.jpeg"
+    },
+    {
+        "id": 20,
+        "name": "Oppo F5",
+        "price": "20000",
+        "image": "oppo-f5.jpeg"
+    },
+    {
+        "id": 21,
+        "name": "Oppo F5 Plus",
+        "price": "22000",
+        "image": "oppo-f5.jpeg"
+    },
+    {
+        "id": 29,
+        "name": "Dell Latitude",
+        "price": "70000",
+        "image": "dell-inspiron.jpeg"
+    },
+    {
+        "id": 22,
+        "name": "Samsung Galaxy On",
+        "price": "22000",
+        "image": "samsung-galaxy-on.jpeg"
+    },
+    {
+        "id": 23,
+        "name": "Samsung Galaxy J",
+        "price": "12000",
+        "image": "samsung-galaxy-on.jpeg"
+    }
+]

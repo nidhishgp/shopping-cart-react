@@ -1,0 +1,14 @@
+@import '~bulma/bulma.sass';
+
+html, body, #app {
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-content{
+    height: calc(100% - 3.25rem); // Navbar height: 3.25rem
+    .product-list{
+        height: 90vh;
+        overflow-y: scroll;
+    }
+}
