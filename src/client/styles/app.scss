@@ -9,6 +9,6 @@ html, body, #app {
     height: calc(100% - 3.25rem); // Navbar height: 3.25rem
     .product-list{
         height: 90vh;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 }

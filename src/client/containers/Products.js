@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductView from '../components/ProductView';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import ProductView from '../components/ProductView';
 import { addToCart, fetchProducts } from '../actions/actionCreators';
 
 class Products extends React.Component
@@ -26,7 +26,7 @@ class Products extends React.Component
         });
 
         return (
-            <div className="columns is-multiline product-list" onScroll={this.handleScroll}>                
+            <div className="columns is-multiline product-list" ref={scrollView => this.scrollView = scrollView} onScroll={this.handleScroll}>                
                 {productList}
                 <div className="column is-12 has-text-centered">
                     {
@@ -38,12 +38,24 @@ class Products extends React.Component
         );
     }
 
+    componentDidUpdate()
+    {
+        if(this.scrollView.scrollHeight <= this.scrollView.clientHeight){
+            this.fetchMoreProducts();
+        }
+    }
+
     handleScroll(e)
     {
         if (e.target.scrollTop >= (e.target.scrollHeight - e.target.offsetHeight)){
-            if(!this.props.complete){
-                this.props.fetchProducts(this.props.page);
-            }
+            this.fetchMoreProducts();
+        }
+    }
+
+    fetchMoreProducts()
+    {
+        if(!this.props.complete && !this.props.loading){
+            this.props.fetchProducts(this.props.page);
         }
     }
 

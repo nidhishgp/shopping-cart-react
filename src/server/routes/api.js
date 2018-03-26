@@ -4,8 +4,8 @@ var fs      = require('fs');
 
 router.get('/products', function(req, res, next){
   let limit  = req.query.limit  || 8,
-      page   = req.query.page   || 1,
-      offset = (limit * page) - limit;
+      page   = req.query.page   || 1;
+  let offset = (limit * page) - limit;
   fs.readFile(__dirname + '/../data/products.json', (error, data) => {
     if (error) throw error;
     let result = JSON.parse(data);
