@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import ProductView from '../components/ProductView';
 import { addToCart, fetchProducts } from '../actions/actionCreators';
+import debounce from '../utils/debounce';
 
 class Products extends React.Component
 {
@@ -38,11 +39,18 @@ class Products extends React.Component
         );
     }
 
+    componentDidMount()
+    {
+        window.addEventListener('resize', debounce((event) => {
+            if(this.canLoadMoreProducts())
+                this.fetchMoreProducts();
+        }, 300));
+    }
+
     componentDidUpdate()
     {
-        if(this.scrollView.scrollHeight <= this.scrollView.clientHeight){
+        if(this.canLoadMoreProducts)            
             this.fetchMoreProducts();
-        }
     }
 
     handleScroll(e)
@@ -50,6 +58,11 @@ class Products extends React.Component
         if (e.target.scrollTop >= (e.target.scrollHeight - e.target.offsetHeight)){
             this.fetchMoreProducts();
         }
+    }
+
+    canLoadMoreProducts()
+    {
+        return this.scrollView.scrollHeight <= this.scrollView.clientHeight;
     }
 
     fetchMoreProducts()

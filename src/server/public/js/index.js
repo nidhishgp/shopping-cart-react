@@ -2763,11 +2763,11 @@ var _App = __webpack_require__(79);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _index = __webpack_require__(104);
+var _index = __webpack_require__(105);
 
 var _index2 = _interopRequireDefault(_index);
 
-__webpack_require__(107);
+__webpack_require__(108);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22015,7 +22015,7 @@ var _Products = __webpack_require__(81);
 
 var _Products2 = _interopRequireDefault(_Products);
 
-var _Cart = __webpack_require__(102);
+var _Cart = __webpack_require__(103);
 
 var _Cart2 = _interopRequireDefault(_Cart);
 
@@ -22238,6 +22238,10 @@ var _ProductView2 = _interopRequireDefault(_ProductView);
 
 var _actionCreators = __webpack_require__(15);
 
+var _debounce = __webpack_require__(102);
+
+var _debounce2 = _interopRequireDefault(_debounce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22292,11 +22296,18 @@ var Products = function (_React$Component) {
             );
         }
     }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this3 = this;
+
+            window.addEventListener('resize', (0, _debounce2.default)(function (event) {
+                if (_this3.canLoadMoreProducts()) _this3.fetchMoreProducts();
+            }, 300));
+        }
+    }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
-            if (this.scrollView.scrollHeight <= this.scrollView.clientHeight) {
-                this.fetchMoreProducts();
-            }
+            if (this.canLoadMoreProducts) this.fetchMoreProducts();
         }
     }, {
         key: 'handleScroll',
@@ -22304,6 +22315,11 @@ var Products = function (_React$Component) {
             if (e.target.scrollTop >= e.target.scrollHeight - e.target.offsetHeight) {
                 this.fetchMoreProducts();
             }
+        }
+    }, {
+        key: 'canLoadMoreProducts',
+        value: function canLoadMoreProducts() {
+            return this.scrollView.scrollHeight <= this.scrollView.clientHeight;
         }
     }, {
         key: 'fetchMoreProducts',
@@ -23398,6 +23414,33 @@ var fetchData = exports.fetchData = function fetchData(page) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.default = debounce;
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+        var context = this,
+            args = arguments;
+        var later = function later() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -23409,7 +23452,7 @@ var _reactRedux = __webpack_require__(8);
 
 var _actionCreators = __webpack_require__(15);
 
-var _CartItem = __webpack_require__(103);
+var _CartItem = __webpack_require__(104);
 
 var _CartItem2 = _interopRequireDefault(_CartItem);
 
@@ -23580,7 +23623,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Cart);
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23706,7 +23749,7 @@ var CartItem = function (_React$Component) {
 exports.default = CartItem;
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23718,11 +23761,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(11);
 
-var _products = __webpack_require__(105);
+var _products = __webpack_require__(106);
 
 var _products2 = _interopRequireDefault(_products);
 
-var _cart = __webpack_require__(106);
+var _cart = __webpack_require__(107);
 
 var _cart2 = _interopRequireDefault(_cart);
 
@@ -23736,7 +23779,7 @@ var reducer = (0, _redux.combineReducers)({
 exports.default = reducer;
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23791,7 +23834,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23843,11 +23886,11 @@ var itemInCart = function itemInCart(id, state) {
 };
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(108);
+var content = __webpack_require__(109);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -23861,7 +23904,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(110)(content, options);
+var update = __webpack_require__(111)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -23893,10 +23936,10 @@ if(false) {
 }
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(109)(false);
+exports = module.exports = __webpack_require__(110)(false);
 // imports
 
 
@@ -23907,7 +23950,7 @@ exports.push([module.i, "/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/b
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 /*
@@ -23989,7 +24032,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -24055,7 +24098,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(111);
+var	fixUrls = __webpack_require__(112);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24371,7 +24414,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 
