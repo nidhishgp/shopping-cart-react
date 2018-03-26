@@ -49,7 +49,7 @@ class Products extends React.Component
 
     componentDidUpdate()
     {
-        if(this.canLoadMoreProducts)            
+        if(this.canLoadMoreProducts())            
             this.fetchMoreProducts();
     }
 

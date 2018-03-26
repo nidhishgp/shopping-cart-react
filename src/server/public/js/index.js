@@ -22307,7 +22307,7 @@ var Products = function (_React$Component) {
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
-            if (this.canLoadMoreProducts) this.fetchMoreProducts();
+            if (this.canLoadMoreProducts()) this.fetchMoreProducts();
         }
     }, {
         key: 'handleScroll',
